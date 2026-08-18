@@ -1,219 +1,233 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Jedier Stivenson Correa Amaris — Portafolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/styles.css">
-
 </head>
 <body>
-    <div class="zona1">
-        <a class="language-btn" href="inglihs.html">inglihs</a>
-        <button id="toggleTheme" class="btn-theme">Modo Claro</button>
 
-        <p class="p1">BIENVENIDO </p>
-        <p class="p2">¿QUIEN SOY?</p>
-        <div class="p3">
-            <p class="p4">Hola soy jedier stivenson correa amaris actualmente estudiante de campusnland/uniminuto colombia, actualmente tengo una edad de 17 años con ansias de seguir estudiando a futuro lenguajes como c++, c entre otros lenguajes</p>
-            <p class="p5">Desarrollador con experiencia en web y bases de datos. Trabajo con JavaScript, HTML y CSS, desarrollando interfaces dinámicas con Web Components, validación de formularios y manejo de datos en JSON y localStorage. También tengo conocimientos en Java, C# (básico) y Python.</p>
-            <img src="resures/yo.jpg" alt="">
+    <header class="editor-toolbar">
+        <div class="dots"><span></span><span></span><span></span></div>
+        <span class="filename">portafolio / jedier.dev</span>
+        <div class="toolbar-actions">
+            <button id="toggleTheme" class="btn-theme" type="button">Modo Claro</button>
+            <a class="language-btn" href="inglihs.html">EN</a>
         </div>
-        
-        <p class="pp1">BIENVENIDO A LOS LENGUAJES QUE CONOSCO</p>
-        <div class="pp2">
-            <p>HTML, Css, JavaScript</p>
-            <img src="resures/imagen_2025-03-11_204331162-removebg-preview.png" alt="">
-            <p>Python, Mysql, Pstgrest, spring boot</p>
-            <img src="resures/imagen_2025-03-11_204640620-removebg-preview.png" alt="">
-            <p>C#, java</p>
-            <img src="resures/imagen_2025-03-11_204728898-removebg-preview.png" alt="">
-            <img src="" alt="">
-        </div>        
-    
-        <p class="ppp1">BIENVENIDO A LOS PROYECTOS QUE E REALIZADO</p>
-        <div class="ppp2">
-            <div class="ppp3">
-                <div class="capsula">
-                    <h1>Proyecto "Avioncito"  Juego en C# con Windows Forms</h1>
-                    <p><strong>Descripción:</strong>  
-                        "Avioncito" es un proyecto desarrollado con el objetivo de aprender y mejorar mis habilidades en el lenguaje de programación C#. 
-                        Utilizando Windows Forms, he diseñado e implementado un juego en el que el jugador controla un avión y debe evitar colisiones con otros aviones enemigos.
-                    </p>
-                    <p class="abrir-modal" data-modal="modal1">Haz clic aquí para ver más detalles</p>
+    </header>
+
+    <div class="zona1">
+
+        <!-- BIO -->
+        <section class="panel bio-panel">
+            <div class="panel-head"><span class="tag">// </span>bio.js</div>
+            <div class="bio">
+                <div class="bio-gutter">
+                    <span class="ln">1</span><span class="ln">2</span><span class="ln">3</span>
+                    <span class="ln">4</span><span class="ln">5</span><span class="ln">6</span>
                 </div>
+                <div class="bio-code">
+                    <span class="bio-comment">/**</span>
+                    <span class="bio-comment"> * <span class="bio-key">nombre:</span> <span class="bio-str">"Jedier Stivenson Correa Amaris"</span></span>
+                    <span class="bio-comment"> * <span class="bio-key">edad:</span> <span class="bio-str">17</span></span>
+                    <span class="bio-comment"> * <span class="bio-key">estudia:</span> <span class="bio-str">"Campusnland / Uniminuto Colombia"</span></span>
+                    <span class="bio-comment"> * <span class="bio-key">objetivo:</span> <span class="bio-str">"seguir aprendiendo C++, C y más"</span></span>
+                    <span class="bio-comment"> */</span>
+                </div>
+            </div>
+            <div class="bio-avatar">
+                <img src="resures/yo.jpg" alt="Foto de Jedier Stivenson Correa Amaris">
+                <p>Desarrollador con experiencia en web y bases de datos. Trabajo con JavaScript, HTML y CSS creando interfaces dinámicas con Web Components, validación de formularios y manejo de datos en JSON y localStorage. También tengo conocimientos en Java, C# (básico) y Python.</p>
+            </div>
+        </section>
+
+        <!-- SKILLS -->
+        <div class="section-title"><span class="hash">#</span><h2>Lenguajes que conozco</h2><small>skills.json</small></div>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <span class="ext web">WEB</span>
+                <img src="resures/imagen_2025-03-11_204331162-removebg-preview.png" alt="Logos de HTML, CSS y JavaScript">
+                <p>HTML, CSS, JavaScript</p>
+            </div>
+            <div class="skill-card">
+                <span class="ext data">DATA</span>
+                <img src="resures/imagen_2025-03-11_204640620-removebg-preview.png" alt="Logos de Python, MySQL, PostgreSQL y Spring Boot">
+                <p>Python, MySQL, PostgreSQL, Spring Boot</p>
+            </div>
+            <div class="skill-card">
+                <span class="ext oop">OOP</span>
+                <img src="resures/imagen_2025-03-11_204728898-removebg-preview.png" alt="Logos de C# y Java">
+                <p>C#, Java</p>
+            </div>
+        </div>
+
+        <!-- PROJECTS -->
+        <div class="section-title"><span class="hash">#</span><h2>Proyectos que he realizado</h2><small>~/proyectos</small></div>
+
+        <div class="project-file">
+            <span class="file-icon cs">C#</span>
+            <div>
+                <h1>Avioncito — Juego en C# con Windows Forms</h1>
+                <p><strong>Descripción:</strong> proyecto desarrollado para aprender y mejorar mis habilidades en C#. Con Windows Forms diseñé un juego donde el jugador controla un avión y debe evitar colisiones con aviones enemigos.</p>
+                <span class="abrir-modal" data-modal="modal1" role="button" tabindex="0">Ver más detalles</span>
             </div>
         </div>
 
         <div id="modal1" class="modal">
             <div class="modal-content">
                 <span class="close" data-modal="modal1">&times;</span>
-                <h1>Detalles del Proyecto "Avioncito"</h1>
-                <p><strong>Gameplay:</strong></p>
-                <video controls>
-                    <source src="Resures/avioncito 2025-03-08 19-59-32.mp4" type="video/mp4">
-                    Tu navegador no soporta la reproducción de video.
-                </video>
-                <p><strong>Características del Juego:</strong></p>
-                <ul>
-                    <li>Desarrollado en C# con Windows Forms.</li>
-                    <li>Mecánica de juego sencilla y dinámica.</li>
-                    <li>Sistema de colisiones y reinicio.</li>
-                    <li>Diseño gráfico mejorado con sprites personalizados.</li>
-                    <li>Exportado a .exe para su ejecución sin entorno de desarrollo.</li>
-                </ul>
-                <p><strong>Tecnologías Utilizadas:</strong></p>
-                <ul>
-                    <li>Lenguaje: C#</li>
-                    <li>Entorno de desarrollo: Visual Studio</li>
-                    <li>Framework: .NET y Windows Forms</li>
-                    <li>Gestión de recursos: Imágenes y eventos en Windows Forms</li>
-                </ul>
-                <p><strong>Objetivos de Aprendizaje y Mejoras Futuras:</strong></p>
-                <ul>
-                    <li>Aumento progresivo de dificultad.</li>
-                    <li>Sistema de puntuaciones altas.</li>
-                    <li>Efectos de sonido y animaciones.</li>
-                </ul>
-                <p>Este proyecto representa un gran avance en mi aprendizaje de C# y Windows Forms.</p>
-                <a href="https://github.com/Stivenco12/aviones_c-" class="btn">GitHub</a>
-            </div>
-         </div>
-
-        <div class="ppp2">
-            <div class="ppp3">
-                <div class="capsula">
-                    <h1>Proyecto "Calculadora en C#" – Aplicación de Windows Forms</h1>
-                    <p><strong>Descripción:</strong>  
-                        Esta calculadora fue desarrollada con el propósito de mejorar mis habilidades en C#. Utilizando Windows Forms, he creado una aplicación funcional que permite realizar operaciones matemáticas básicas de manera sencilla e intuitiva.
-                    </p>
-                    <p class="abrir-modal" data-modal="modalCalculadora">Haz clic aquí para ver más detalles</p>
+                <div class="modal-content-inner">
+                    <h1>Detalles del proyecto "Avioncito"</h1>
+                    <p><strong>Gameplay:</strong></p>
+                    <video controls>
+                        <source src="Resures/avioncito 2025-03-08 19-59-32.mp4" type="video/mp4">
+                        Tu navegador no soporta la reproducción de video.
+                    </video>
+                    <p><strong>Características del juego:</strong></p>
+                    <ul>
+                        <li>Desarrollado en C# con Windows Forms.</li>
+                        <li>Mecánica de juego sencilla y dinámica.</li>
+                        <li>Sistema de colisiones y reinicio.</li>
+                        <li>Diseño gráfico mejorado con sprites personalizados.</li>
+                        <li>Exportado a .exe para su ejecución sin entorno de desarrollo.</li>
+                    </ul>
+                    <p><strong>Tecnologías utilizadas:</strong></p>
+                    <ul>
+                        <li>Lenguaje: C#</li>
+                        <li>Entorno de desarrollo: Visual Studio</li>
+                        <li>Framework: .NET y Windows Forms</li>
+                        <li>Gestión de recursos: imágenes y eventos en Windows Forms</li>
+                    </ul>
+                    <p><strong>Próximas mejoras:</strong></p>
+                    <ul>
+                        <li>Aumento progresivo de dificultad.</li>
+                        <li>Sistema de puntuaciones altas.</li>
+                        <li>Efectos de sonido y animaciones.</li>
+                    </ul>
+                    <a href="https://github.com/Stivenco12/aviones_c-" class="btn" target="_blank" rel="noopener">Ver en GitHub</a>
                 </div>
+            </div>
+        </div>
+
+        <div class="project-file">
+            <span class="file-icon cs">C#</span>
+            <div>
+                <h1>Calculadora en C# — Aplicación de Windows Forms</h1>
+                <p><strong>Descripción:</strong> aplicación funcional para realizar operaciones matemáticas básicas de forma sencilla e intuitiva, desarrollada para reforzar mis habilidades en C#.</p>
+                <span class="abrir-modal" data-modal="modalCalculadora" role="button" tabindex="0">Ver más detalles</span>
             </div>
         </div>
 
         <div id="modalCalculadora" class="modal">
             <div class="modal-content">
                 <span class="close" data-modal="modalCalculadora">&times;</span>
-                <h1>Detalles del Proyecto "Calculadora en C#"</h1>
-                <p><strong>Funcionamiento:</strong></p>
-                <video controls>
-                    <source src="Resures/Form1 2025-03-08 20-47-19.mp4" type="video/mp4">
-                    Tu navegador no soporta la reproducción de video.
-                </video>
-                <p><strong>Características de la Calculadora:</strong></p>
-                <ul>
-                    <li>Desarrollada en C# con Windows Forms.</li>
-                    <li>Interfaz gráfica sencilla e intuitiva.</li>
-                    <li>Soporta operaciones básicas: suma, resta, multiplicación y división.</li>
-                    <li>Manejo de errores en la división entre cero.</li>
-                    <li>Diseño adaptable y responsivo dentro de Windows Forms.</li>
-                    <li>Exportado a .exe para su ejecución independiente.</li>
-                </ul>
-                <p><strong>Tecnologías Utilizadas:</strong></p>
-                <ul>
-                    <li>Lenguaje: C#</li>
-                    <li>Entorno de desarrollo: Visual Studio</li>
-                    <li>Framework: .NET y Windows Forms</li>
-                    <li>Manejo de eventos y validaciones en tiempo real.</li>
-                </ul>
-                <p><strong>Objetivos de Aprendizaje y Mejoras Futuras:</strong></p>
-                <ul>
-                    <li>Agregar operaciones avanzadas como raíz cuadrada y potencias.</li>
-                    <li>Implementar un historial de operaciones.</li>
-                    <li>Incorporar un modo oscuro para mejorar la experiencia de usuario.</li>
-                </ul>
-                <p>Este proyecto ha sido una excelente oportunidad para afianzar mis conocimientos en desarrollo de aplicaciones de escritorio con C#.</p>
-                <a href="https://github.com/Stivenco12/calculadora" class="btn">GitHub</a>
-            </div>
-        </div>
-        
-        <h2 class="ppp2I">Proyectos Web</h2>
-
-        <div class="ppp2">
-            <div class="ppp3">
-                <div class="capsula">
-                    <h1>Proyecto SpaceX</h1>
-                    <p><strong>Descripción:</strong>  
-                        Este proyecto fue desarrollado con el propósito de mejorar nuestras habilidades en desarrollo web. 
-                        A través de tecnologías modernas, hemos creado una aplicación funcional e intuitiva.
-                    </p>
-                    <p class="abrir-modal" data-modal="modalProyecto">Haz clic aquí para ver más detalles</p>
+                <div class="modal-content-inner">
+                    <h1>Detalles del proyecto "Calculadora en C#"</h1>
+                    <p><strong>Funcionamiento:</strong></p>
+                    <video controls>
+                        <source src="Resures/Form1 2025-03-08 20-47-19.mp4" type="video/mp4">
+                        Tu navegador no soporta la reproducción de video.
+                    </video>
+                    <p><strong>Características:</strong></p>
+                    <ul>
+                        <li>Desarrollada en C# con Windows Forms.</li>
+                        <li>Interfaz gráfica sencilla e intuitiva.</li>
+                        <li>Soporta suma, resta, multiplicación y división.</li>
+                        <li>Manejo de errores en la división entre cero.</li>
+                        <li>Diseño adaptable dentro de Windows Forms.</li>
+                        <li>Exportado a .exe para ejecución independiente.</li>
+                    </ul>
+                    <p><strong>Próximas mejoras:</strong></p>
+                    <ul>
+                        <li>Operaciones avanzadas como raíz cuadrada y potencias.</li>
+                        <li>Historial de operaciones.</li>
+                        <li>Modo oscuro.</li>
+                    </ul>
+                    <a href="https://github.com/Stivenco12/calculadora" class="btn" target="_blank" rel="noopener">Ver en GitHub</a>
                 </div>
             </div>
         </div>
-        
-        <!-- Ventana Modal del Proyecto -->
+
+        <div class="section-title"><span class="hash">#</span><h2>Proyectos web</h2><small>~/proyectos/web</small></div>
+
+        <div class="project-file">
+            <span class="file-icon web">JS</span>
+            <div>
+                <h1>Proyecto SpaceX</h1>
+                <p><strong>Descripción:</strong> aplicación funcional e intuitiva desarrollada en equipo para mejorar nuestras habilidades en desarrollo web con tecnologías modernas.</p>
+                <span class="abrir-modal" data-modal="modalProyecto" role="button" tabindex="0">Ver más detalles</span>
+            </div>
+        </div>
+
         <div id="modalProyecto" class="modal">
             <div class="modal-content">
                 <span class="close" data-modal="modalProyecto">&times;</span>
-                <h1>Detalles del Proyecto SpaceX</h1>
-        
-                <p><strong>Funcionamiento:</strong></p>
-                <video controls>
-                    <source src="Resures/Document - Opera 2025-03-08 21-33-14.mp4" type="video/mp4">
-                    Tu navegador no soporta la reproducción de video.
-                </video>
-        
-                <p><strong>Características del Proyecto:</strong></p>
-                <ul>
-                    <li>Desarrollado con tecnologías modernas.</li>
-                    <li>Interfaz gráfica intuitiva y fácil de usar.</li>
-                    <li>Funcionalidades avanzadas implementadas.</li>
-                    <li>Optimizado para rendimiento y experiencia de usuario.</li>
-                </ul>
-        
-                <p><strong>Tecnologías Utilizadas:</strong></p>
-                <ul>
-                    <li>Lenguajes de programación: HTML, CSS, JavaScript</li>
-                    <li>Frameworks y librerías: (agregar los utilizados)</li>
-                    <li>Metodologías ágiles y buenas prácticas de desarrollo.</li>
-                </ul>
-        
-                <p><strong>Objetivos de Aprendizaje y Mejoras Futuras:</strong></p>
-                <ul>
-                    <li>Optimizar el rendimiento y mejorar la accesibilidad.</li>
-                    <li>Implementar nuevas funcionalidades.</li>
-                    <li>Mejorar la interfaz con nuevos diseños y animaciones.</li>
-                </ul>
-        
-                <p>Este proyecto fue desarrollado por <strong>Jedier Stivenson</strong> y <strong>Danna Soto</strong>, quienes trabajaron en equipo para lograr una solución eficiente y efectiva.</p>
-        
-                <a href="https://github.com/Stivenco12/PROYECTO-FILTRO_JS_GUERRERO-DANNA-CORREA-JEDIER" class="btn">GitHub</a>
-            </div>
-        </div>
-        <br>
-        <div class="contacto">
-            <h2>Contacto</h2>
-            <div class="info">
-                <p><i class="fas fa-phone"></i> <strong>📱:</strong> +57 318 3164638</p>
-                <p><i class="fas fa-envelope"></i> <strong>📧:</strong> jestcoam@gmail.com</p>
-            </div>
-            <div class="redes">
-                <a href="https://wa.me/573183164638?text=Hola,%20quiero%20más%20información" target="_blank">
-                    <i class="fab fa-whatsapp"></i> WhatsApp
-                </a>
-                <a href="https://github.com/Stivenco12" target="_blank">
-                    <i class="fab fa-github"></i> GitHub
-                </a>
-                <a href="https://www.linkedin.com/in/jedier-stivenson-correa-amariz-628597353/" target="_blank">
-                    <i class="fab fa-linkedin"></i> LinkedIn
-                </a>
-                <a href="docs/archivo.pdf" download class="btn-descarga">
-                     Descargar PDF
-                </a>
-                
+                <div class="modal-content-inner">
+                    <h1>Detalles del proyecto SpaceX</h1>
+                    <p><strong>Funcionamiento:</strong></p>
+                    <video controls>
+                        <source src="Resures/Document - Opera 2025-03-08 21-33-14.mp4" type="video/mp4">
+                        Tu navegador no soporta la reproducción de video.
+                    </video>
+                    <p><strong>Características:</strong></p>
+                    <ul>
+                        <li>Desarrollado con tecnologías modernas.</li>
+                        <li>Interfaz gráfica intuitiva y fácil de usar.</li>
+                        <li>Funcionalidades avanzadas implementadas.</li>
+                        <li>Optimizado para rendimiento y experiencia de usuario.</li>
+                    </ul>
+                    <p><strong>Tecnologías utilizadas:</strong></p>
+                    <ul>
+                        <li>HTML, CSS, JavaScript</li>
+                        <li>Metodologías ágiles y buenas prácticas de desarrollo.</li>
+                    </ul>
+                    <p>Este proyecto fue desarrollado por <strong>Jedier Stivenson</strong> y <strong>Danna Soto</strong>.</p>
+                    <a href="https://github.com/Stivenco12/PROYECTO-FILTRO_JS_GUERRERO-DANNA-CORREA-JEDIER" class="btn" target="_blank" rel="noopener">Ver en GitHub</a>
+                </div>
             </div>
         </div>
 
+        <!-- CONTACT -->
+        <div class="section-title"><span class="hash">#</span><h2>Contacto</h2><small>contact.sh</small></div>
+        <div class="panel contacto">
+            <div class="panel-body">
+                <div class="info">
+                    <p><i class="fas fa-phone"></i> +57 318 3164638</p>
+                    <p><i class="fas fa-envelope"></i> jestcoam@gmail.com</p>
+                </div>
+                <div class="redes">
+                    <a href="https://wa.me/573183164638?text=Hola,%20quiero%20más%20información" target="_blank" rel="noopener">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                    <a href="https://github.com/Stivenco12" target="_blank" rel="noopener">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                    <a href="https://www.linkedin.com/in/jedier-stivenson-correa-amariz-628597353/" target="_blank" rel="noopener">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                    <a href="docs/archivo.pdf" download class="btn-descarga">
+                        Descargar PDF
+                    </a>
+                </div>
+            </div>
+        </div>
 
+        <!-- MESSAGE FORM -->
         <div class="EnviarMes">
-            <div class="stars-container"></div>
-            <script type="module" src="main2.js"></script>
-            <p2-element>      
-            </p2-element>
+            <div class="terminal">
+                <div class="terminal-head"><span></span><span></span><span></span></div>
+                <div class="terminal-body">
+                    <p2-element></p2-element>
+                </div>
+            </div>
         </div>
+
     </div>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

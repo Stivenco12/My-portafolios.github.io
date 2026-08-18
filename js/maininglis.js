@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll(".modal").forEach(modal => {
-        modal.style.display = "none"; // 🔹 Asegura que estén ocultos al iniciar
+        modal.style.display = "none";
     });
 
     document.querySelectorAll(".abrir-modal").forEach(boton => {
@@ -8,6 +8,12 @@ document.addEventListener("DOMContentLoaded", function () {
             let modalId = this.getAttribute("data-modal");
             let modal = document.getElementById(modalId);
             if (modal) modal.style.display = "flex";
+        });
+        boton.addEventListener("keydown", function (e) {
+            if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                this.click();
+            }
         });
     });
 
@@ -24,139 +30,79 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     });
+
+    window.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+            document.querySelectorAll(".modal").forEach(modal => {
+                modal.style.display = "none";
+            });
+        }
+    });
 });
+
 class P2Element extends HTMLElement {
     constructor() {
         super();
         this.innerHTML = `
-        <center>
-            <div class="button-container">
-                <form id="form" action="https://formsubmit.co/jestcoam@gmail.com" method="POST">  
-                    <p class="ppp1">Send a direct message to email</p>
-                    <input id="nombre" type="text" name="nombre" placeholder="What is your name?" required>
-                    <input id="nombre" type="text" name="para?" placeholder="What is it for?" required>
-                    <br>
-                    <br>
-                    <button class="contacto" id="yesButton" type="submit">Send</button>
-
-                    <input type="hidden" name="_captcha" value="false">
-
-                    <input type="hidden" id="deviceInfo" name="deviceInfo"> <!-- Hidden field for device information -->
-                </form>
-            </div>
-        </center>
+            <form id="form" action="https://formsubmit.co/jestcoam@gmail.com" method="POST">
+                <p class="ppp1 form-title">send a direct message to email</p>
+                <input id="nombre" type="text" name="nombre" placeholder="What is your name?" required>
+                <input id="motivo" type="text" name="para" placeholder="What is it for?" required>
+                <button class="contacto" id="yesButton" type="submit">Send</button>
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" id="deviceInfo" name="deviceInfo">
+            </form>
         `;
 
-        // Obtener referencias a los botones y formulario
         this.form = this.querySelector('#form');
         this.yesButton = this.querySelector('#yesButton');
-        this.noButton = this.querySelector('#noButton');
-        this.deviceInfoInput = this.querySelector('#deviceInfo'); // Campo oculto para la información del dispositivo
+        this.deviceInfoInput = this.querySelector('#deviceInfo');
 
-        // Tamaño inicial del botón "Sí"
-        this.yesButtonSize = 16;
-
-        // Añadir la información del dispositivo en el campo oculto
         this.setDeviceInfo();
 
-        // Evento para el botón "No"
-        this.noButton.addEventListener('click', () => {
-            this.swapButtons();
-            this.enlargeYesButton();
-        });
-
-        // Evento para el envío del formulario
         this.form.addEventListener('submit', (event) => {
             this.handleFormSubmit(event);
         });
     }
 
-    swapButtons() {
-        const parent = this.yesButton.parentNode;
-        const yesButtonIndex = Array.from(parent.children).indexOf(this.yesButton);
-        const noButtonIndex = Array.from(parent.children).indexOf(this.noButton);
-
-        if (yesButtonIndex < noButtonIndex) {
-            parent.insertBefore(this.noButton, this.yesButton);
-        } else {
-            parent.insertBefore(this.yesButton, this.noButton);
-        }
-    }
-
-    enlargeYesButton() {
-        this.yesButtonSize += 2;
-        this.yesButton.style.fontSize = this.yesButtonSize + 'px';
-    }
-
     handleFormSubmit(event) {
-        event.preventDefault(); // Evita la recarga de la página
-        this.noButton.style.display = 'none'; // Oculta el botón "No"
-        this.yesButton.textContent = 'Cargando...'; // Cambia el texto del botón "Sí"
-        this.yesButton.style.backgroundColor = 'red'; // Cambia el color del botón
-    
-        // Obtener los datos del formulario
+        event.preventDefault();
+        this.yesButton.textContent = 'Sending...';
+        this.yesButton.disabled = true;
+
         const formData = new FormData(this.form);
-    
-        // Enviar los datos de forma asíncrona con fetch()
+
         fetch(this.form.action, {
             method: 'POST',
             body: formData
         })
         .then(response => {
             if (response.ok) {
-                this.yesButton.textContent = 'Enviado ✔'; // Cambiar texto al enviar con éxito
-                this.yesButton.style.backgroundColor = 'green'; // Color verde para indicar éxito
-                this.form.reset(); // Limpiar el formulario después del envío
+                this.yesButton.textContent = 'Sent ✔';
+                this.yesButton.style.background = 'var(--string)';
+                this.form.reset();
             } else {
-                throw new Error('Error al enviar');
+                throw new Error('Send failed');
             }
         })
-        .catch(error => {
-            this.yesButton.textContent = 'Error ❌'; // Indicar error
-            this.yesButton.style.backgroundColor = 'darkred';
+        .catch(() => {
+            this.yesButton.textContent = 'Error ❌';
+            this.yesButton.style.background = 'var(--accent)';
+            this.yesButton.disabled = false;
         });
-    
-        return false; // Evita cualquier comportamiento por defecto
     }
 
     setDeviceInfo() {
-        // Obtener información del dispositivo utilizando platform.js
         const userAgent = navigator.userAgent;
         const platform = navigator.platform;
-        const device = platform.name || "Desconocido"; // Usar la propiedad 'name' de platform.js
-
-        // Guardar la información en el campo oculto
-        this.deviceInfoInput.value = `User Agent: ${userAgent}, Platform: ${platform}, Device: ${device}`;
+        this.deviceInfoInput.value = `User Agent: ${userAgent}, Platform: ${platform}`;
     }
 }
 
 customElements.define("p2-element", P2Element);
-document.getElementById("toggleTheme").addEventListener("click", function() {
+
+document.getElementById("toggleTheme").addEventListener("click", function () {
     const body = document.body;
-    if (body.classList.contains("light-mode")) {
-        body.classList.remove("light-mode");
-        this.textContent = "Clear Mode";
-    } else {
-        body.classList.add("light-mode");
-        this.textContent = "Dark Mode";
-    }
+    const isLight = body.classList.toggle("light-mode");
+    this.textContent = isLight ? "Dark Mode" : "Light Mode";
 });
-
-// CSS para modo claro
-const style = document.createElement("style");
-style.innerHTML = `
-    .light-mode {
-        background: white !important;
-        color: black !important;
-    }
-
-    .light-mode .p3,
-    .light-mode .ppp2,
-    .light-mode .ppp3,
-    .light-mode .contacto,
-    .light-mode .modal-content {
-        background: rgba(0, 0, 0, 0.1) !important;
-        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2) !important;
-    }
-`;
-document.head.appendChild(style);
